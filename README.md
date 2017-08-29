@@ -16,3 +16,9 @@ Depois basta navegar para a url `http://localhost:4200/`
 Rode ng build --prod e copie o conteúdo da pasta dist para o servidor web.
 
 Lembre-se de ajustar a tag base no index.html caso a aplicação esteja numa subpasta do servidor.
+
+## Exemplo Online
+
+http://www.leandroblanes.com.br/PublicAndSecureAdmin
+
+`O ajuste necessário da tag base pode ser visto no exemplo online`
