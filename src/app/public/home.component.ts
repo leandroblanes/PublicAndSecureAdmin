@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'public',
-  template: `<h3>Home</h3>`,
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent  { 
 
