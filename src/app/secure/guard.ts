@@ -13,6 +13,6 @@ export class Guard implements CanActivate {
       return true;
 
     this.router.navigate(['/admin/login']);
-    return false;
+    return true;
   }
 }

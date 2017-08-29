@@ -17,11 +17,14 @@ import { Guard } from './secure/guard';
 
 import { UserService } from './services/user.service';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   imports:      [ 
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule.forRoot()
   ],
   declarations: [ 
     AppComponent,

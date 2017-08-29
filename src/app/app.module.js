@@ -17,6 +17,7 @@ var home_component_1 = require("./public/home.component");
 var app_routing_module_1 = require("./app-routing.module");
 var guard_1 = require("./secure/guard");
 var user_service_1 = require("./services/user.service");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,7 +28,8 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             app_routing_module_1.AppRoutingModule,
-            forms_1.FormsModule
+            forms_1.FormsModule,
+            ng_bootstrap_1.NgbModule.forRoot()
         ],
         declarations: [
             app_component_1.AppComponent,

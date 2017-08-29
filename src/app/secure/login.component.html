@@ -1,13 +1,14 @@
-<h1>Login</h1>
-<form #loginForm="ngForm">
-  <p>
-    <label>Login</label>
-    <input type="text" name="login" id="login" [(ngModel)]="model.login" required />
-  </p>
-  <p>
-    <label>Senha</label>
-    <input type="password" name="senha" id="senha" [(ngModel)]="model.senha" required />
-  </p>
-  <button type="submit" (click)="entrar()">Entrar</button>
-</form>
-{{msg}}
+<div class="container">
+  <form #loginForm="ngForm" class="form-signin">
+    <h2 class="form-signin-heading">Identifique-se</h2>
+
+    <label for="login" class="sr-only">Login</label>
+    <input type="text" name="login" id="login" [(ngModel)]="model.login" class="form-control" required="" autofocus="" />
+
+    <label for="inputPassword" class="sr-only">Senha</label>
+    <input type="password" name="senha" id="senha" [(ngModel)]="model.senha" class="form-control" required="" />
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="entrar()">Entrar</button>
+    <div class="text-center red">{{msg}}</div>
+  </form>
+</div>

@@ -11,15 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var user_service_1 = require("./../services/user.service");
+var login_component_1 = require("./login.component");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var SecureComponent = (function () {
-    function SecureComponent(router, userService) {
+    function SecureComponent(router, userService, modalService) {
         this.router = router;
         this.userService = userService;
-        this.isLogged = this.userService.isLogged();
+        this.modalService = modalService;
+        if (!this.userService.isLogged())
+            this.modalService.open(login_component_1.LoginComponent);
     }
     SecureComponent.prototype.sair = function () {
         this.userService.logout();
-        this.isLogged = false;
         this.router.navigate(['/admin/login']);
     };
     return SecureComponent;
@@ -27,9 +30,10 @@ var SecureComponent = (function () {
 SecureComponent = __decorate([
     core_1.Component({
         selector: 'secure',
-        template: "\n    <h2>Admin</h2>\n    <a *ngIf=\"isLogged\" (click)=\"sair()\" href=\"javascript:;\">sair</a>\n    <router-outlet></router-outlet>\n  ",
+        templateUrl: './secure.component.html',
+        styleUrls: ['./secure.component.css']
     }),
-    __metadata("design:paramtypes", [router_1.Router, user_service_1.UserService])
+    __metadata("design:paramtypes", [router_1.Router, user_service_1.UserService, ng_bootstrap_1.NgbModal])
 ], SecureComponent);
 exports.SecureComponent = SecureComponent;
 //# sourceMappingURL=secure.component.js.map

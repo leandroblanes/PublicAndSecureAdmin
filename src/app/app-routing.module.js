@@ -9,13 +9,15 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var public_component_1 = require("./public/public.component");
 var secure_component_1 = require("./secure/secure.component");
+var login_component_1 = require("./secure/login.component");
 var public_routes_1 = require("./public/public_routes");
 var secure_routes_1 = require("./secure/secure_routes");
 var guard_1 = require("./secure/guard");
 var routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '', component: public_component_1.PublicComponent, children: public_routes_1.public_routes },
-    { path: 'admin', component: secure_component_1.SecureComponent, canActivate: [guard_1.Guard], children: secure_routes_1.secure_routes }
+    { path: 'admin', component: secure_component_1.SecureComponent, canActivate: [guard_1.Guard], children: secure_routes_1.secure_routes },
+    { path: 'admin/login', component: login_component_1.LoginComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

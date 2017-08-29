@@ -6,7 +6,8 @@ import { UserService } from './../services/user.service';
 
 @Component({
   selector: 'login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent  { 
 
@@ -22,5 +23,4 @@ export class LoginComponent  {
       this.msg = "Login inválido! (use admin com senha 123)";
     })
   }
-
 }

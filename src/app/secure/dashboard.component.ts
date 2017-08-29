@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'secure',
-  template: `
-    <h3>Dashboard</h3>
-  `,
+  templateUrl: './dashboard.component.html'
 })
 export class DashboardComponent  { 
 

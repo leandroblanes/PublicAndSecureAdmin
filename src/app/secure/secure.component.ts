@@ -1,23 +1,23 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from './../services/user.service';
+import { LoginComponent } from './login.component';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'secure',
-  template: `
-    <h2>Admin</h2>
-    <a *ngIf="isLogged" (click)="sair()" href="javascript:;">sair</a>
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './secure.component.html',
+  styleUrls: ['./secure.component.css']
 })
 export class SecureComponent  { 
-  constructor(private router: Router, private userService: UserService) {}
+  constructor(private router: Router, private userService: UserService, private modalService: NgbModal) {
 
-  public isLogged = this.userService.isLogged();
+    if (!this.userService.isLogged())
+      this.modalService.open(LoginComponent);
+  }
 
   sair() : void {
     this.userService.logout();
-    this.isLogged = false;
     this.router.navigate(['/admin/login']);
   }
 }

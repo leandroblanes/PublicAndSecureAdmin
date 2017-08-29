@@ -20,7 +20,7 @@ var Guard = (function () {
         if (this.userService.isLogged() || route.children[0].url[0].path == 'login')
             return true;
         this.router.navigate(['/admin/login']);
-        return false;
+        return true;
     };
     return Guard;
 }());
